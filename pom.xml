@@ -1,33 +1,206 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.octo</groupId>
-  <artifactId>cxf-poc</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>cxf-poc Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.8.2</version>
-      <scope>test</scope>
-    </dependency>
-    
-    <dependency>
-    <groupId>org.apache.cxf</groupId>
-    <artifactId>cxf-api</artifactId>
-    <version>2.4.3</version>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-web</artifactId>
-    	<version>3.0.6.RELEASE</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>cxf-poc</finalName>
-  </build>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.octo</groupId>
+	<artifactId>cxf-poc</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>cxf-poc Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<spring.version>3.0.6.RELEASE</spring.version>
+		<cxf.version>2.4.3</cxf.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- CXF -->
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-api</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-common-utilities</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.ws.commons.schema</groupId>
+					<artifactId>XmlSchema</artifactId>
+				</exclusion>
+				<exclusion> <!-- already in JDK 6 -->
+					<groupId>javax.xml.bind</groupId>
+					<artifactId>jaxb-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-core</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.ws.commons.schema</groupId>
+					<artifactId>XmlSchema</artifactId>
+				</exclusion>
+				<exclusion> <!-- already in JDK 6 -->
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-impl</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-bindings-soap</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion> <!-- already in JDK 6 -->
+					<groupId>javax.xml.soap</groupId>
+					<artifactId>saaj-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-databinding-jaxb</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-impl</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jaxb-impl</artifactId>
+					<groupId>com.sun.xml.bind</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jaxb-api</artifactId>
+					<groupId>javax.xml.bind</groupId>
+				</exclusion>
+				<exclusion> <!-- already in JDK 6 -->
+					<groupId>javax.xml.soap</groupId>
+					<artifactId>saaj-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>asm</groupId>
+					<artifactId>asm</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-simple</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>cxf-api</artifactId>
+					<groupId>org.apache.cxf</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>cxf-rt-bindings-soap</artifactId>
+					<groupId>org.apache.cxf</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion> <!-- already in JDK 6 -->
+					<groupId>javax.xml.soap</groupId>
+					<artifactId>saaj-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>xalan</groupId>
+					<artifactId>xalan</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.0.6.RELEASE</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>cxf-poc</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<artifactItems>
+						<artifactItem>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.artifactId}</artifactId>
+							<version>${project.version}</version>
+							<type>war</type>
+							<overWrite>true</overWrite>
+							<outputDirectory>
+								/Users/mikael/developpement/java/apache-tomcat-6.0.26/webapps
+							</outputDirectory>
+							<destFileName>cxf-poc.war</destFileName>
+						</artifactItem>
+					</artifactItems>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
