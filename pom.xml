@@ -20,6 +20,22 @@
 			<version>4.8.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- CXF -->
 
@@ -194,7 +210,8 @@
 							<type>war</type>
 							<overWrite>true</overWrite>
 							<outputDirectory>
-								/Users/mikael/developpement/java/apache-tomcat-6.0.26/webapps
+								/Users/mikael/developpement/java/jboss-as-7.0.2.Final/standalone/deployments
+								<!-- /Users/mikael/developpement/java/apache-tomcat-6.0.26/webapps -->
 							</outputDirectory>
 							<destFileName>cxf-poc.war</destFileName>
 						</artifactItem>

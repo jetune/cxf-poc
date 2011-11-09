@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dddee40-3da6-4b86-a692-eb7a250e5a91" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/cxf/org.apache.cxf.Logger" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/services/javax.xml.soap.MessageFactory" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/services/javax.xml.soap.MetaFactory" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/services/javax.xml.soap.SOAPFactory" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cxf-poc.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/octo/cxf/services/HelloWorldService.java" />
-    </list>
+    <list default="true" id="7dddee40-3da6-4b86-a692-eb7a250e5a91" name="Default" comment="" />
     <ignored path="cxf-poc.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,7 +83,7 @@
       <file leaf-file-name="HelloWorldService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/octo/cxf/services/HelloWorldService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="47" selection-start="271" selection-end="271" vertical-scroll-proportion="0.23579203">
+            <state line="26" column="49" selection-start="480" selection-end="480" vertical-scroll-proportion="0.47158405">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -744,7 +737,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/octo/cxf/services/HelloWorldService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="47" selection-start="271" selection-end="271" vertical-scroll-proportion="0.23579203">
+        <state line="26" column="49" selection-start="480" selection-end="480" vertical-scroll-proportion="0.47158405">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
