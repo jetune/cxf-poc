@@ -19,6 +19,9 @@
             <element id="module-output" name="cxf-poc" />
           </element>
           <element id="directory" name="lib">
+            <element id="library" level="project" name="Maven: org.springframework:spring-test:3.0.6.RELEASE" />
+            <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
+            <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
             <element id="library" level="project" name="Maven: org.apache.cxf:cxf-api:2.4.3" />
             <element id="library" level="project" name="Maven: org.apache.cxf:cxf-common-utilities:2.4.3" />
             <element id="library" level="project" name="Maven: org.apache.ws.xmlschema:xmlschema-core:2.0.1" />
@@ -270,6 +273,28 @@
         <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: asm:asm:3.3.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.3.1/asm-3.3.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.3.1/asm-3.3.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.3.1/asm-3.3.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: cglib:cglib:2.2.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.2.2/cglib-2.2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.2.2/cglib-2.2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.2.2/cglib-2.2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: com.sun.xml.bind:jaxb-impl:2.1.13">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/sun/xml/bind/jaxb-impl/2.1.13/jaxb-impl-2.1.13.jar!/" />
@@ -301,6 +326,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:servlet-api:2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: joda-time:joda-time:1.6.2">
@@ -642,6 +678,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/3.0.6.RELEASE/spring-expression-3.0.6.RELEASE-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.springframework:spring-test:3.0.6.RELEASE">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/3.0.6.RELEASE/spring-test-3.0.6.RELEASE.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/3.0.6.RELEASE/spring-test-3.0.6.RELEASE-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/3.0.6.RELEASE/spring-test-3.0.6.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework:spring-web:3.0.6.RELEASE">

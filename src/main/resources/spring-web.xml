@@ -12,7 +12,26 @@
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
     <context:annotation-config />
+    
     <bean id="applicationConfi" class="com.octo.cxf.config.ApplicationConfig"/>
-	<jaxws:endpoint address="/helloworld" implementor="#helloWorldService" serviceName="helloWorldService" /> 
+    
+    <bean id="saajInInterceptor" class="org.apache.cxf.binding.soap.saaj.SAAJInInterceptor" />
+    
+    <cxf:bus >
+		<cxf:features>
+			<!-- <cxf:logging /> -->
+		</cxf:features>
+		<cxf:inInterceptors>
+			<ref bean="saajInInterceptor" />
+		</cxf:inInterceptors>
+	</cxf:bus>
+    
+    
+	<jaxws:endpoint address="/helloworld" implementor="#helloWorldService" serviceName="helloWorldService">
+		<jaxws:inInterceptors>
+			<ref bean="xmlInInterceptor" />
+			<ref bean="exceptionInterceptor" />
+		</jaxws:inInterceptors>
+	</jaxws:endpoint> 
 
 </beans>

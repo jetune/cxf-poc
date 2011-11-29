@@ -2,6 +2,10 @@ package com.octo.cxf.services;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+
+import com.octo.cxf.services.exceptions.BusinessException;
+import com.octo.cxf.services.exceptions.TechnicalException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +22,17 @@ public class HelloWorldService {
 
     @WebMethod
     public String sayHello() {
-        List<String> myList = new ArrayList<String>();
         return "Hello world";
     }
 
+    @WebMethod
+    public void makeTechnicalException() throws TechnicalException {
+    	throw new TechnicalException();
+    }
+    
+    @WebMethod
+    public void makeBusinessException() throws BusinessException {
+    	throw new BusinessException();
+    }
 
 }
