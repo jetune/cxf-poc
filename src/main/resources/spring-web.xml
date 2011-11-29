@@ -30,8 +30,10 @@
 	<jaxws:endpoint address="/helloworld" implementor="#helloWorldService" serviceName="helloWorldService">
 		<jaxws:inInterceptors>
 			<ref bean="xmlInInterceptor" />
-			<ref bean="exceptionInterceptor" />
 		</jaxws:inInterceptors>
+		<jaxws:outFaultInterceptors>
+			<ref bean="exceptionInterceptor" />
+		</jaxws:outFaultInterceptors>
 	</jaxws:endpoint> 
 
 </beans>
