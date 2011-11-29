@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.octo.cxf.interceptors.ExceptionInterceptor;
 import com.octo.cxf.interceptors.XmlInInterceptor;
+import com.octo.cxf.interceptors.XmlOutInterceptor;
 import com.octo.cxf.services.HelloWorldService;
 
 
@@ -21,6 +22,12 @@ public class ApplicationConfig {
 	public XmlInInterceptor xmlInInterceptor() {
 		return new XmlInInterceptor();
 	}
+	
+	@Bean
+	public XmlOutInterceptor xmlOutInterceptor() {
+		return new XmlOutInterceptor();
+	}
+	
 	
 	@Bean
 	public ExceptionInterceptor exceptionInterceptor() {

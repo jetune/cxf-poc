@@ -38,9 +38,6 @@ public class ExceptionInterceptor extends AbstractSoapInterceptor {
 		if (ex instanceof BusinessException) {
 			BusinessException e = (BusinessException) ex;
 			generateSoapFault(fault, e);
-		} else if (ex instanceof TechnicalException) {
-			TechnicalException e = (TechnicalException) ex;
-			generateSoapFault(fault, e);
 		} else {
 			generateSoapFault(fault, null);
 		}
@@ -53,7 +50,8 @@ public class ExceptionInterceptor extends AbstractSoapInterceptor {
 	 * @param e
 	 */
 	private void generateSoapFault(Fault fault, Exception e) {
-			fault.setFaultCode(createQName(200));
+			fault.setFaultCode(createQName(8));
+			fault.setMessage("Business Exception");
 	}
 
 	private static QName createQName(int errorCode) {

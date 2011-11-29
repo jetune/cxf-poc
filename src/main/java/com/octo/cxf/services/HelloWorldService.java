@@ -26,11 +26,6 @@ public class HelloWorldService {
     }
 
     @WebMethod
-    public void makeTechnicalException() throws TechnicalException {
-    	throw new TechnicalException();
-    }
-    
-    @WebMethod
     public void makeBusinessException() throws BusinessException {
     	throw new BusinessException();
     }
