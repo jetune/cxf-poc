@@ -16,7 +16,6 @@
     <bean id="applicationConfi" class="com.octo.cxf.config.ApplicationConfig"/>
     
     <bean id="saajInInterceptor" class="org.apache.cxf.binding.soap.saaj.SAAJInInterceptor" />
-    
     <cxf:bus >
 		<cxf:features>
 			<cxf:logging />
@@ -33,7 +32,8 @@
 		</cxf:outFaultInterceptors>
 	</cxf:bus>
     
-    
-	<jaxws:endpoint address="/helloworld" implementor="#helloWorldService" serviceName="helloWorldService" /> 
+     <jaxws:client id="helloClient"
+                  serviceClass="com.octo.cxf.services.HelloWorld"
+                  address="http://localhost:8080/cxf-poc/ws/helloworld" />
 
 </beans>

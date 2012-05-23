@@ -9,16 +9,7 @@ import com.octo.cxf.services.exceptions.TechnicalException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * Created by IntelliJ IDEA.
- * User: mikael
- * Date: 09/11/11
- * Time: 18:44
- * To change this template use File | Settings | File Templates.
- */
-@WebService
-public class HelloWorldService {
+public class HelloWorldService implements HelloWorld {
 
     @WebMethod
     public String sayHello() {
